@@ -85,6 +85,44 @@
 	</div>
 	<script>
 	  // your solution here
+var myElement1 = document.getElementById("tap-box");
+var tap = new Hammer(myElement1);
+tap.on("tap", function() {
+    myElement1.style.color = "#ff0000";
+});
+
+var myElement2 = document.getElementById("swipe-box");
+var swipe = new Hammer(myElement2);
+swipe.on("swipe", function() {
+      myElement2.style.backgroundColor = 'green';
+});
+    
+var myElement3 = document.getElementById("rotate-box");
+var rotate = new Hammer(myElement3);
+rotate.get("rotate").set({ enable: true });
+rotate.on("rotate", function() {
+    myElement3.style.width = "200px"; 
+});
+
+var myElement4 = document.getElementById("pinch-box");
+var pinch = new Hammer(myElement4);
+pinch.get("pinch").set({ enable: true });
+pinch.on("pinch", function() {
+    myElement4.style.height = "50px"; 
+});
+    
+var myElement5 = document.getElementById("press-box");
+var press = new Hammer(myElement5);
+press.on("press", function() {
+    myElement5.insertAdjacentText("afterbegin", "Pig ");
+});
+    
+var myElement6 = document.getElementById("pan-box");
+var pan = new Hammer(myElement6);
+pan.on("pan", function() {
+    myElement6.style.backgroundColor = "red"; 
+});
+    
   </script>
 </body>
 </html>
